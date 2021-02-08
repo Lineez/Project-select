@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+option,
+select,
+input,
+button,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  -webkit-text-decoration: transparent;
+          text-decoration: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+}
+
+html.lock,
+body.lock {
+  overflow: hidden;
+}
+
+._img {
+  display: block;
+  font-size: 0;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1950px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
