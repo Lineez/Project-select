@@ -80,3 +80,40 @@ body.lock {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+.select {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.select__value {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.select__option-wrap {
+  display: none;
+}
+
+.select__option-wrap.active {
+  display: block;
+}
+
+.select__group {
+  padding-bottom: 10px;
+}
+
+.select__group:last-child {
+  padding-bottom: 0;
+}
+
+.select__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.select__option {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 5px;
+}

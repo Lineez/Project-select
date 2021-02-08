@@ -1,33 +1,99 @@
 @import '_mixin-var';
 
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-h1,h2,h3,h4,h5,h6{color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;letter-spacing:inherit;}
-ul,li{list-style:none;}
-option,select,input,button,textarea{color:inherit;font-family:inherit;font-size:inherit;cursor:pointer;outline:none;border:none;background:transparent;}
-a{color:inherit;text-decoration:transparent;cursor:pointer;color:inherit;font-size:inherit;}
-html,body{height:100%;width:100%;font-size:18px;&.lock{overflow:hidden;}}
-._img{display:block;font-size:0;max-height:100%;max-width:100%;object-fit:cover;}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+option,
+select,
+input,
+button,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  &.lock {
+    overflow: hidden;
+  }
+}
+._img {
+  display: block;
+  font-size: 0;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
 
 .wrapper {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1950px;
-	margin: 0 auto;
-	padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1950px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.form {
-	// .form__select
-	&__select {}
-	// .form__option
-	&__option {}
-}
-
-.form {
-	// .form__select
-	&__select {}
-	// .form__option-wrap
-	&__option-wrap {}
-	// .form__option
-	&__option {}
+.select {
+	font-family: Arial, Helvetica, sans-serif;
+  &__value {
+		font-size: 20px;
+		font-weight: 500;
+		padding-bottom: 5px;
+  }
+  &__option-wrap {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &__group {
+		padding-bottom: 10px;
+		&:last-child {
+		padding-bottom: 0;
+		}
+	}
+  &__title {
+		font-size: 18px;
+		font-weight: 600;
+  }
+  &__option {
+		font-size: 16px;
+		font-weight: 500;
+		padding-left: 5px;
+  }
 }
