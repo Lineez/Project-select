@@ -73,11 +73,12 @@ body {
 		font-weight: 500;
 		padding-bottom: 5px;
 		cursor: pointer;
+		user-select: none;
   }
   &__option-wrap {
     display: none;
     &.active {
-      display: inline-block;
+			display: inline-block;
 			padding: 0 5px;
 			border: 1px solid #000;
 			border-radius: 5px;

@@ -18,18 +18,39 @@ function Select(
   const optionS = document.querySelectorAll(`${selectClass} option`)
   const optionGroupS = document.querySelectorAll(`${selectClass} optgroup`)
 
+  // Установка начального значения Select'a
   function setDefaultSelectValue(newSelect) {
     const selectValue = document.createElement('div')
     selectValue.classList.add('select__value')
     selectValue.innerText = selectName ? selectName : optionS[0].innerText
     newSelect.prepend(selectValue)
-		toggleSelect(selectValue)
+    toggleSelect(selectValue)
   }
 
+  // Переключение селекта
   function toggleSelect(selectValue) {
-		const selectWrap = document.querySelector(`.${optionWrapClass}`)
+    const selectWrap = document.querySelector(`.${optionWrapClass}`)
     selectValue.addEventListener('click', (e) => {
       selectWrap.classList.toggle('active')
+    })
+    document.addEventListener(
+      'DOMContentLoaded',
+      clickOption(selectWrap, selectValue),
+    )
+  }
+
+  // выбор опции
+  function clickOption(selectWrap, selectValue) {
+    const selectOption = document.querySelectorAll('.select__option')
+    const newSelect = document.querySelector('.select')
+    selectOption.forEach((el) => {
+      el.addEventListener('click', () => {
+        selectWrap.classList.remove('active')
+        selectValue.innerText = el.innerText
+        newSelect.setAttribute(dataAttribute, el.dataset.value)
+        // Вызов внешней функции для обработки
+        sValue(newSelect)
+      })
     })
   }
 
@@ -39,6 +60,7 @@ function Select(
     select.classList.forEach((el) => {
       if (el) {
         newSelect.classList.add('select')
+        newSelect.setAttribute(dataAttribute, 'undefined')
       }
     })
     createOptionWrap(newSelect)
@@ -120,4 +142,9 @@ function Select(
 }
 // Пропустить параметры? undefined : иначе нельзя
 const select = new Select('.form__select')
+
+// Внешняя функция для получения значения select'a
+function sValue(select) {
+  console.log(select.dataset.value)
+}
 ;
